@@ -53,7 +53,7 @@
       applyOnDataSets: [ "ND280" ]
       
 - parameterName: "PShell_MF_PMissShape_C"
-  isEnabled: true
+  isEnabled: false
   dialSetDefinitions:
     - dialsType: Spline
       minimunSplineResponse: 0
@@ -61,7 +61,7 @@
       applyOnDataSets: [ "ND280" ]
       
 - parameterName: "SShell_MF_PMissShape_C"
-  isEnabled: true
+  isEnabled: false
   dialSetDefinitions:
     - dialsType: Spline
       minimunSplineResponse: 0
@@ -185,7 +185,7 @@
       applyCondition: "[ReactionCode] == 2 && ( [NeutrinoCode] == 14 || [NeutrinoCode] == 12 ) && ( [TgtMat] == 12 || [TgtMat] == 16 )"
 
 - parameterName: "2p2h_norm_nubar"
-  isEnabled: true
+  isEnabled: false
   dialSetDefinitions:
     - dialsType: Normalization
       nominal: 1
