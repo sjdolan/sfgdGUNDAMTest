@@ -1,0 +1,20 @@
+dataEventType: Asimov 
+#delta_BB_SFGD: 0.15
+
+fitSampleList:
+    
+  - name: "FHC-sFGD-CC0#pi0p-numu"
+    isEnabled: true
+    binning: "../binning/FHCNumuCC0Pi_0p_SFGDONLY.txt"
+    selectionCuts: "isRHC == 0 && (SelectedSample == 101 || SelectedSample == 102)" # tagged or not tagged proton
+    dataSets: ["ND280"]
+    mcNorm: 10e+21
+    dataNorm: 1.6e+21  #expected data POT for 6months at 700kW
+
+  - name: "FHC-sFGD-CC1#pi0p-numu"
+    isEnabled: true
+    binning: "../binning/FHCNumuCC0Pi_0p_SFGDONLY.txt" # in a real example the binning per sample would be different
+    selectionCuts: "isRHC == 0 && SelectedSample == 103"
+    dataSets: ["ND280"]
+    mcNorm: 10e+21
+    dataNorm: 1.6e+21  #expected data POT for 6months at 700kW

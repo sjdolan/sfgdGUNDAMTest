@@ -1,0 +1,363 @@
+# X-section dials defined here
+
+- parameterName: "MAQE" #<- Needs to be the same as the one in xsec_param_names in the covariance matrix
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MAQEGraph" # <- Needs to be the same as in the branch in the MC file
+      applyOnDataSets: [ "ND280" ]
+
+- parameterName: "Q2_norm_5"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "[ReactionCode] == TMath::Abs(1) && 0.25 <= [Q2] && [Q2] < 0.5"
+- parameterName: "Q2_norm_6"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "[ReactionCode] == TMath::Abs(1) && 0.5 <= [Q2] && [Q2] < 1"
+- parameterName: "Q2_norm_7"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "[ReactionCode] == TMath::Abs(1) && 1 <= [Q2] && [Q2] < 10"
+      
+- parameterName: "PShell_MF_Norm_C"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PShell_MF_Norm_CGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "SShell_MF_Norm_C"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SShell_MF_Norm_CGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "SRC_Norm_C"
+  isEnabled: true
+ # priorValue: 0
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SRC_Norm_CGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "PShell_MF_PMissShape_C"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PShell_MF_PMissShape_CGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "SShell_MF_PMissShape_C"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SShell_MF_PMissShape_CGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Pauli_Blocking_C_nu"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Pauli_Blocking_C12_nuGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Pauli_Blocking_C_nubar"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Pauli_Blocking_C12_nubarGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Optical_Potential_C"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Optical_Potential_C12Graph" 
+      applyOnDataSets: [ "ND280" ]
+      
+# Oxygen dials:
+      
+- parameterName: "P1_2Shell_MF_Norm_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "P1_2Shell_MF_Norm_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "P3_2Shell_MF_Norm_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "P3_2Shell_MF_Norm_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+
+- parameterName: "SShell_MF_Norm_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SShell_MF_Norm_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "SRC_Norm_O"
+  isEnabled: false
+  #priorValue: 0
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SRC_Norm_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "P1_2Shell_MF_PMissShape_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "P1_2Shell_MF_PMissShape_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "P3_2Shell_MF_PMissShape_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "P3_2Shell_MF_PMissShape_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "SShell_MF_PMissShape_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "SShell_MF_PMissShape_OGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Pauli_Blocking_O_nu"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Pauli_Blocking_O16_nuGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Pauli_Blocking_O_nubar"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Pauli_Blocking_O16_nubarGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Optical_Potential_O"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Optical_Potential_O16Graph" 
+      applyOnDataSets: [ "ND280" ]
+      
+# 2p2h dials
+
+- parameterName: "2p2h_norm_nu"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "[ReactionCode] == 2 && ( [NeutrinoCode] == 14 || [NeutrinoCode] == 12 ) && ( [TgtMat] == 12 || [TgtMat] == 16 )"
+
+- parameterName: "2p2h_norm_nubar"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "TMath::Abs([ReactionCode]) == 2 && ( [NeutrinoCode] == -14 || [NeutrinoCode] == -12 ) && ( [TgtMat] == 12 || [TgtMat] == 16 )"
+
+- parameterName: "2p2h_normCtoO"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Normalization
+      nominal: 1
+      applyCondition: "TMath::Abs([ReactionCode]) == 2 && ( [TgtMat] == 16 )"
+      
+- parameterName: "2p2h_Edep_lowEnu"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MEC_lowEnuGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_Edep_highEnu"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MEC_highEnuGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_Edep_lowEnubar"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MEC_lowEnubarGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_Edep_highEnubar"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MEC_highEnubarGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "PNNN_Shape"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PNNN_ShapeGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_shape_C_NN"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PDD_C_NNGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_shape_C_np"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PDD_C_npGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_shape_O_NN"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PDD_O_NNGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "2p2h_shape_O_np"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PDD_O_npGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+# RES FF params 
+      
+- parameterName: "CA5"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "CA5Graph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "MARES"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "MARESGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "ISO_BKG"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "BgSclResGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "ISO_BKG_LowPPi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "BgSclRes_lowPPiGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+# FSI
+      
+- parameterName: "FEFQE"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_QELowMomProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "FEFQEH"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_QEHighMomProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "FEFINEL"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_InelProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "FEFABS"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_AbsProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "FEFCX"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_CExLowMomProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "FEFCXH"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "PionFSI_CExHighMomProbGraph" 
+      applyOnDataSets: [ "ND280" ]
+      
+- parameterName: "Nucleon_FSI"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimunSplineResponse: 0
+      dialLeafName: "Nucleon_Fate_FSIGraph" 
+      applyOnDataSets: [ "ND280" ]

@@ -1,0 +1,12 @@
+# Minimizer settings
+
+minimizer: "Minuit2"
+algorithm: "Migrad"
+likelihood: "Poisson" # this should change to BB to include MC stats
+errors: "Hesse"
+print_level: 3
+tolerance: 0.1
+strategy: 1
+max_iter: 1E6
+max_fcn: 1E9
+

@@ -1,0 +1,59 @@
+# Fit Parameters Definition File
+# 3 parameter sets are defined: Flux, X-section, and Detector
+
+
+- name: Template Parameters C
+  isEnabled: true
+
+  numberOfParameters: 50
+  nominalStepSize: 0.1
+  parameterLimits:
+    minValue: 0
+    maxValue: 30
+
+  # as the template parameters are defined with a true binning, we only expect only one parameter to apply on each event
+  useOnlyOneParameterPerEvent: true
+
+  # here you can define the binning of the template parameters
+  dialSetDefinitions:
+    - applyOnDataSets: ["*"]
+      propagateResponseOn: [ "weight" ] # TODO: implement
+      # the true variables will be defined here:
+      parametersBinningPath: "/eos/home-s/sdolan/GUNDAM/upgradeOA/OASFGD/binning/FHCNumuCC0Pi_0p_SFGDONLY_true.txt"
+      applyCondition: "([NeutrinoCode] == 14) && ([TgtMat] == 12) && ([reaction] == 1 || [reaction] == 9)" # a made up silly sig def of numuCCQE or CC2p2h on C
+      printDialsSummary: true
+  printDialSetsSummary: true
+
+# Flux Systematics:
+# Each parameter represent a bin in true neutrino energy / flavor / FHC-RHC
+- name: Flux Systematics
+  isEnabled: true
+  releaseFixedParametersOnHesse: true # true by default
+  covarianceMatrixFilePath: ../Parameters/FluxSystematics/21bv2_run1to10_ndto9_banff.root  #chopped_flux_cov.root old matrix file
+  covarianceMatrixTMatrixD: total_flux_cov  #chopped_flux_cov_TMatrixD old matrix
+  parameterLimits:
+    minValue: 0
+    maxValue: 30
+  useOnlyOneParameterPerEvent: true
+  dialSetDefinitions:
+    - applyOnDataSets: ["*"]
+      propagateResponseOn: [ "weight" ] # TODO: implement
+      parametersBinningPath: ../Parameters/FluxSystematics/fluxBinningBANFFGeV.txt  #fluxBinningNew.txt old binning
+      printDialsSummary: true
+  printDialSetsSummary: true
+
+# X-section systematics
+# Parameters are defined by the covariance matrix
+# Although the dials of each parameter are set with external files
+- name: Cross section Systematics
+  isEnabled: true
+  releaseFixedParametersOnHesse: true # true by default
+  covarianceMatrixFilePath: ../Parameters/CrossSection/xsec_covariance_banff_2021a_v13_noFlux_050122_Mirror2p2hShape_MirrorRESEb.root
+  covarianceMatrixTMatrixD: xsec_cov
+  parameterNameTObjArray: xsec_param_names
+  parameterPriorTVectorD: xsec_param_prior
+  parameterLowerBoundsTVectorD: xsec_param_lb
+  parameterUpperBoundsTVectorD: xsec_param_ub
+  dialSetWorkingDirectory: ../Parameters/CrossSection/
+  printDialSetsSummary: true
+  parameterDefinitions: "commonConfigXsecDials_SFGDONLY.yaml"

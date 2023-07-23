@@ -1,0 +1,33 @@
+generateSamplePlots: true
+generateOneSigmaPlots: false
+scanParameters: false
+throwMcBeforeFit: true
+throwMcBeforeFitGain: 0.1
+fit: true
+
+fitterEngineConfig:
+  fixGhostParameters: true
+  ghostParameterDeltaChi2Threshold: 0.001
+  parStepScale: 0.1
+  
+  propagatorConfig:
+    throwParameters: false
+    useResponseFunctions: false
+    parameterSetListConfig: "commonConfigFitParSet_SFGDONLY.yaml"
+    fitSampleSetConfig: "configFitSampleSet_SFGDONLY_2022.yaml"
+    plotGeneratorConfig: "commonConfigPlotGenerator_banffsfgd.yaml"
+    dataSetList:
+      - name: ND280
+        isEnabled: true
+        mc:
+          tree: "sample_sum" # common for all files (imposed by TChain)
+          nominalWeightLeafName: "" # "FluxWeight[0] * DetNomWeight * PileUpWeight" # * POTWeight"
+          #fakeDataWeightFormula: "(NeutrinoCode < 0) ? 1.5 : 1"
+          #fakeDataWeightFormula: "SF_PShell_MeanF_Norm_C_graph.Eval(0.2) * SF_SShell_MeanF_Norm_C_graph.Eval(-0.45)" #"SF_SRC_Norm_C_graph.Eval(1.)" 
+          #fakeDataWeightFormula: "(reaction == 0 && nutype > 0 && 0.25*1E6 <= q2_true && q2_true < 0.5*1E6) ? 1.3 : 1"
+          filePathList:
+            #- "/eos/home-s/sdolan/GUNDAM/upgradeOA/OASFGD/datasets/run4wMCForSFGD.root" #FHC 3.61e21
+            #- "../MC/SFGD_BANFFFormat_anu_500k_NaturalUnits_goodq3units.root"
+            - "../MC/SFGD_BANFFFormat_nu_2M_NaturalUnits_goodq3units.root"
+
+  minimizerConfig: "commonConfigMinimizer.yaml"
