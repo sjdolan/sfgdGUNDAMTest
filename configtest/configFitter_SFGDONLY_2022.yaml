@@ -12,6 +12,8 @@ fitterEngineConfig:
   
   propagatorConfig:
     throwParameters: false
+    enableEventMcThrow: false # don't throw MC stats in toys for the moment
+    enableStatThrowInToys: true # we do want to throw data stats though
     useResponseFunctions: false
     parameterSetListConfig: "commonConfigFitParSet_SFGDONLY.yaml"
     fitSampleSetConfig: "configFitSampleSet_SFGDONLY_2022.yaml"
