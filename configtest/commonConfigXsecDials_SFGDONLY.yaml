@@ -77,7 +77,7 @@
       applyOnDataSets: [ "ND280" ]
       
 - parameterName: "Pauli_Blocking_C_nubar"
-  isEnabled: true
+  isEnabled: false
   dialSetDefinitions:
     - dialsType: Spline
       minimunSplineResponse: 0
