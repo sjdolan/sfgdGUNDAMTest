@@ -19,7 +19,7 @@
     - applyOnDataSets: ["*"]
       propagateResponseOn: [ "weight" ] # TODO: implement
       # the true variables will be defined here:
-      parametersBinningPath: "/eos/home-s/sdolan/GUNDAM/upgradeOA/OASFGD/binning/FHCNumuCC0Pi_0p_SFGDONLY_true.txt"
+      parametersBinningPath: "../binning/FHCNumuCC0Pi_0p_SFGDONLY_true.txt"
       applyCondition: "([NeutrinoCode] == 14) && ([TgtMat] == 12) && ([reaction] == 1 || [reaction] == 9)" # a made up silly sig def of numuCCQE or CC2p2h on C
       printDialsSummary: true
   printDialSetsSummary: true
